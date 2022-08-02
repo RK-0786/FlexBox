@@ -1,0 +1,132 @@
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            padding: 5px;
+            font-weight: bold;
+            width: 100%;
+            height: 100px;
+            background-color: powderblue;
+        }
+        
+        nav {
+            min-height: 40px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: linen;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        nav>div {
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: center;
+        }
+        
+        article {
+            padding: 5px;
+            font-weight: bold;
+            float: left;
+            height: 40vh;
+            background-color: tan;
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+        }
+        
+        aside {
+            padding: 5px;
+            font-weight: bold;
+            width: 20%;
+            float: left;
+            height: 40vh;
+            background-color: lightsalmon;
+        }
+        
+        footer {
+            padding: 5px;
+            font-weight: bold;
+            clear: both;
+            width: 100%;
+            height: 40px;
+            background-color: powderblue;
+        }
+        /*This is my added code, I also added some code in above code. :) */
+        
+        body {
+            display: flex;
+            flex-flow: column wrap;
+        }
+        
+        article>section {
+            float: left;
+            height: fit-content;
+            width: fit-content;
+            margin: 20px;
+            padding: 10px 50px;
+            text-align: center;
+            flex: 1 1 200px;
+            border: dotted 3px red;
+        }
+        
+        @media only screen and (min-width:480px) and (max-width:600px) {
+            nav {
+                flex-direction: column;
+                max-width: 100%;
+                width: 100%;
+            }
+            aside {
+                display: none;
+            }
+            article {
+                width: 100%;
+                min-width: 100%;
+            }
+            article>section {
+                background-color: palevioletred;
+                flex: 100%;
+            }
+        }
+        
+        @media only screen and (min-width:601px) {
+            /* aside {
+                display: none;
+            } */
+            nav {
+                flex-direction: column;
+                max-width: 100%;
+                width: 100%;
+            }
+            article {
+                width: 80%;
+                max-width: 100%;
+            }
+            article>section {
+                background-color: yellow;
+                flex: 33%;
+            }
+            body {
+                flex-flow: wrap;
+            }
+        }
+        
+        @media only screen and (min-width:768px) {
+            article>section {
+                background-color: lightgreen;
+                flex: 30%;
+                margin: 3px;
+            }
+            body {
+                flex-flow: wrap;
+            }
+            nav {
+                flex-direction: row;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
